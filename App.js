@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, View, SafeAreaView, StatusBar } from "react-native";
+import { Searchbar } from "react-native-paper";
 
 export default function App() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const onChangeSearch = (query) => setSearchQuery(query);
+
   return (
     <>
       <SafeAreaView style={styles.safeArea}>
         <View style={styles.searchBar}>
-          <Text>Search</Text>
+          <Searchbar
+            placeholder="Search"
+            onChangeText={onChangeSearch}
+            value={searchQuery}
+          />
         </View>
         <View style={styles.listContainer}>
           <Text>list</Text>
@@ -24,7 +32,7 @@ const styles = StyleSheet.create({
   },
   searchBar: {
     padding: 16,
-    backgroundColor: "green",
+    backgroundColor: "white",
   },
   listContainer: {
     flex: 2,
