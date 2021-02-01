@@ -1,24 +1,12 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, SafeAreaView, StatusBar } from "react-native";
-import { Searchbar } from "react-native-paper";
+import { StyleSheet, SafeAreaView, StatusBar } from "react-native";
+import RestaurantsScreen from "./src/features/restaurants/screens/restaurants.screen";
 
 export default function App() {
-  const [searchQuery, setSearchQuery] = useState("");
-  const onChangeSearch = (query) => setSearchQuery(query);
-
   return (
     <>
       <SafeAreaView style={styles.safeArea}>
-        <View style={styles.searchBar}>
-          <Searchbar
-            placeholder="Search"
-            onChangeText={onChangeSearch}
-            value={searchQuery}
-          />
-        </View>
-        <View style={styles.listContainer}>
-          <Text>list</Text>
-        </View>
+        <RestaurantsScreen />
       </SafeAreaView>
       <StatusBar style="auto" />
     </>
