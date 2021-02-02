@@ -9,14 +9,14 @@ const Container = styled.View`
 `;
 
 const SearchBarContainer = styled.View`
-  padding: 16px;
-  background-color: white;
+  padding: ${(props) => props.theme.space[3]};
+  background-color: ${(props) => props.theme.colors.bg.primary}; ;
 `;
 
 const ListContainer = styled.View`
   flex: 1;
-  padding: 16px;
-  background-color: blue;
+  padding: ${(props) => props.theme.space[3]};
+  background-color: ${(props) => props.theme.colors.bg.primary};
 `;
 
 export default function RestaurantsScreen() {
